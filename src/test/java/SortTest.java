@@ -16,6 +16,8 @@ public class SortTest {
         assertEquals(asList(1, 2), sort(asList(2, 1)));
         assertEquals(asList(1, 2, 3), sort(asList(1, 2, 3)));
         assertEquals(asList(1, 2, 3), sort(asList(2, 1, 3)));
+        assertEquals(asList(1, 2, 3), sort(asList(1, 3, 2)));
+        assertEquals(asList(1, 2, 3), sort(asList(3, 2, 1)));
 
     }
 
