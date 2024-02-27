@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static java.util.Arrays.asList;
@@ -18,7 +19,7 @@ public class SortTest {
         assertEquals(asList(1, 2, 3), sort(asList(2, 1, 3)));
         assertEquals(asList(1, 2, 3), sort(asList(1, 3, 2)));
         assertEquals(asList(1, 2, 3), sort(asList(3, 2, 1)));
-//        assertEquals(asList(1, 2, 3, 4), sort(asList(1, 2, 3, 4)));
+        assertEquals(asList(1, 2, 3, 4), sort(asList(1, 2, 3, 4)));
 
     }
 
@@ -37,25 +38,11 @@ public class SortTest {
 
         } else {
 
-            int first = list.get(1);
             int middle = list.get(0);
-            int last = list.get(2);
 
-            List<Integer> lessers = new ArrayList<>();
-            List<Integer> greaters = new ArrayList<>();
+            List<Integer> lessers = list.stream().filter(x -> x < middle).collect(Collectors.toList());
+            List<Integer> greaters = list.stream().filter(x -> x > middle).collect(Collectors.toList());
 
-            if (first < middle) {
-                lessers.add(first);
-            }
-            if (last < middle) {
-                lessers.add(last);
-            }
-            if (first > middle) {
-                greaters.add(first);
-            }
-            if (last > middle) {
-                greaters.add(last);
-            }
 
             List<Integer> result = new ArrayList<>();
             result.addAll(sort(lessers));
