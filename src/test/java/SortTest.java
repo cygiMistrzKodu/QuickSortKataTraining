@@ -58,9 +58,9 @@ public class SortTest {
             }
 
             List<Integer> result = new ArrayList<>();
-            result.addAll(lessers);
+            result.addAll(sort(lessers));
             result.add(middle);
-            result.addAll(greaters);
+            result.addAll(sort(greaters));
 
             return result;
         }
