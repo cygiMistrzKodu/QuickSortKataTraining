@@ -20,6 +20,8 @@ public class SortTest {
         assertEquals(asList(1, 2, 3), sort(asList(1, 3, 2)));
         assertEquals(asList(1, 2, 3), sort(asList(3, 2, 1)));
         assertEquals(asList(1, 2, 3, 4), sort(asList(1, 2, 3, 4)));
+        assertEquals(asList(1, 2, 3, 4), sort(asList(2, 1, 3, 4)));
+        assertEquals(asList(1, 2, 3, 4), sort(asList(4, 3, 2, 1)));
 
     }
 
